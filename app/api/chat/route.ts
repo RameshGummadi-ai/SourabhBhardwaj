@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { GoogleGenAI } from "@google/generative-ai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const systemPrompt = `
 You are the Virtual Assistant of Sourabh Bhardwaj, who is an Assistant Professor, Data Analyst, and AI Researcher.
@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Call real Gemini API
-    const ai = new GoogleGenAI({ apiKey });
+    const ai = new GoogleGenerativeAI(apiKey);
     const model = ai.getGenerativeModel({
       model: "gemini-1.5-flash",
       systemInstruction: systemPrompt

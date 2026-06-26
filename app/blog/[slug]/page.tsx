@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { ArrowLeft, Calendar, Eye, Heart, MessageSquare, Tag, User, Send } from "lucide-react";
-import { getBlogBySlug, likeBlog, addComment, Blog, Comment } from "@/services/db";
+import { getBlogBySlug, likeBlog, addComment, Blog, BlogComment } from "@/services/db";
 
 interface BlogDetailPageProps {
   params: {
@@ -21,7 +21,7 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
   // Comment Form States
   const [commentForm, setCommentForm] = useState({ name: "", email: "", content: "" });
   const [commentStatus, setCommentStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
-  const [commentsList, setCommentsList] = useState<Comment[]>([]);
+  const [commentsList, setCommentsList] = useState<BlogComment[]>([]);
 
   useEffect(() => {
     getBlogBySlug(params.slug).then(post => {

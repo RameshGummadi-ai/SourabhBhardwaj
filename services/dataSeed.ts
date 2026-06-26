@@ -52,10 +52,10 @@ export interface Blog {
   featuredImage?: string;
   seoTitle?: string;
   seoDescription?: string;
-  comments?: Comment[];
+  comments?: BlogComment[];
 }
 
-export interface Comment {
+export interface BlogComment {
   id: string;
   authorName: string;
   authorEmail: string;
@@ -335,7 +335,7 @@ With modern AI grading assistants, professors can provide rich, personalized fee
     likes: 42,
     featuredImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
     seoTitle: "AI in Higher Education: Classroom Transformation - Sourabh Bhardwaj",
-    seoDescription: "An exploration of LLMs, automatic grading, and semantic syllabus updates in engineering colleges by Dr. Sourabh Bhardwaj.",
+    seoDescription: "An exploration of LLMs, automatic grading, and semantic syllabus updates in engineering colleges by Sourabh Bhardwaj.",
     comments: [
       { id: "c1", authorName: "Prof. Amit Verma", authorEmail: "amit@dbuu.ac.in", content: "Outstanding insights, Sourabh. The shift to dynamic curriculum mapping is highly required.", createdAt: "2026-06-21T12:00:00Z" }
     ]

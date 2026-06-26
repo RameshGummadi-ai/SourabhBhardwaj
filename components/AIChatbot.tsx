@@ -19,7 +19,7 @@ const suggestedPrompts = [
 export default function AIChatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { sender: "bot", text: "Hello! I am Dr. Sourabh's AI representative. Ask me about his publications, career timeline, GATE/NET qualifications, or academic topics." }
+    { sender: "bot", text: "Hello! I am Sourabh's AI representative. Ask me about his publications, career timeline, GATE/NET qualifications, or academic topics." }
   ]);
   const [inputValue, setInputValue] = useState("");
   const [loading, setLoading] = useState(false);

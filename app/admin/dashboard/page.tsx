@@ -525,7 +525,7 @@ export default function AdminDashboardPage() {
                         required
                         type="text"
                         value={Array.isArray(projectForm.techStack) ? projectForm.techStack.join(", ") : projectForm.techStack || ""}
-                        onChange={e => setProjectForm({ ...projectForm, techStack: e.target.value })}
+                        onChange={e => setProjectForm({ ...projectForm, techStack: e.target.value as any })}
                         placeholder="Python, Streamlit, Pandas"
                         className="w-full px-4 py-2 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl outline-none text-slate-800 dark:text-slate-100"
                       />
@@ -637,7 +637,7 @@ export default function AdminDashboardPage() {
                         required
                         type="text"
                         value={Array.isArray(pubForm.authors) ? pubForm.authors.join(", ") : pubForm.authors || ""}
-                        onChange={e => setPubForm({ ...pubForm, authors: e.target.value })}
+                        onChange={e => setPubForm({ ...pubForm, authors: e.target.value as any })}
                         placeholder="Sourabh Bhardwaj, Rahul Pandey"
                         className="w-full px-4 py-2 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl outline-none text-slate-800 dark:text-slate-100"
                       />

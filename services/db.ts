@@ -1,13 +1,4 @@
 import {
-  Publication,
-  Experience,
-  Education,
-  Project,
-  Blog,
-  Certification,
-  Lecture,
-  ContactMessage,
-  Comment,
   initialPublications,
   initialExperiences,
   initialEducation,
@@ -16,6 +7,30 @@ import {
   initialProjects,
   initialBlogs
 } from "./dataSeed";
+
+import type {
+  Publication,
+  Experience,
+  Education,
+  Project,
+  Blog,
+  Certification,
+  Lecture,
+  ContactMessage,
+  BlogComment
+} from "./dataSeed";
+
+export type {
+  Publication,
+  Experience,
+  Education,
+  Project,
+  Blog,
+  Certification,
+  Lecture,
+  ContactMessage,
+  BlogComment
+};
 
 // Local Storage Helper functions to run on client side safely
 const isClient = typeof window !== "undefined";
@@ -172,10 +187,10 @@ export async function likeBlog(slug: string): Promise<number> {
   return 0;
 }
 
-export async function addComment(slug: string, comment: Omit<Comment, "id" | "createdAt">): Promise<Comment> {
+export async function addComment(slug: string, comment: Omit<BlogComment, "id" | "createdAt">): Promise<BlogComment> {
   const list = await getBlogs();
   const index = list.findIndex(b => b.slug === slug);
-  const newComment: Comment = {
+  const newComment: BlogComment = {
     id: "comment_" + Math.random().toString(36).substr(2, 9),
     authorName: comment.authorName,
     authorEmail: comment.authorEmail,
